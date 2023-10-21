@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">lindajenhani lsi3 mesure glycémie</string>
+    <string name="val_text">Mesure de niveau de glycémie</string>
+    <string name="title">Votre age</string>
+</resources>

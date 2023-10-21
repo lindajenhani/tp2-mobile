@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/app_background"
+    >
+
+    <!-- Le TextView affiche le texte "mesure de niveau de glycémie"
+    centré avec une police Playfair Display en gras,
+         une taille de 25sp et une couleur rouge. Il a un espacement de 30dp autour
+         du texte et sa largeur correspond à son parent, tandis que sa hauteur
+         s'ajuste au contenu. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/playfair_display"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/val_text"
+        android:textColor="@color/red"
+        android:textSize="25sp"
+        android:textStyle="bold"
+
+        />
+
+    <!-- Ce TextView a pour ID "AvAge", ce qui permet de l'identifier dans le code.
+     Il affiche le texte "votre age" provenant de la ressource "title" avec une taille de texte
+     de 25sp, une marge supérieure de 20dp et une couleur de texte noire. -->
+    <TextView
+        android:id="@+id/AvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        />
+
+    <!-- seeckbar-->
+    <!-- Cette SeekBar a pour ID "sbAge", ” pour définir l’âge du patient
+     Elle occupe toute la largeur disponible,
+     ajuste automatiquement sa hauteur en fonction du contenu,
+     a une marge supérieure de 20dp pour la positionner sous un autre élément,
+     et a une valeur maximale de 120. -->
+    <SeekBar
+        android:id="@+id/sbAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:max="120"
+        />
+
+    <!-- Cette View est utilisée pour afficher une ligne horizontale décorative.
+         Elle occupe toute la largeur disponible,
+         a une hauteur de 3dp,
+         une marge supérieure de 30dp
+         pour la positionner sous un autre élément,
+         et utilise un arrière-plan défini par la ressource "line_shape". -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/line_shape"
+        />
+
+    <!-- Ce TextView affiche le texte "Est-ce que vous jeûnez ? :"
+    avec une taille de texte de 25sp.
+         Il s'étend sur toute la largeur disponible,
+          ajuste automatiquement sa hauteur en fonction du contenu,
+         a une marge supérieure de 30dp pour le positionner sous un autre élément,
+         et utilise une couleur de texte noire. -->
+    <TextView
+        android:text="Est ce que vous jeûnez ? :"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        />
+
+    <!-- Ce RadioGroup est utilisé pour afficher deux boutons radio (RadioButton) "Oui" et "Non".
+     Le RadioGroup s'étend sur toute la largeur disponible,
+      ajuste automatiquement sa hauteur en fonction du contenu,
+     a une orientation horizontale,
+     et a une marge supérieure de 10dp pour le positionner sous un autre élément.
+     Les RadioButton sont de largeur égale,
+     ont une hauteur de 48dp,
+     et partagent le même espace horizontal avec un poids de 1 chacun.
+     "Oui" est coché par défaut,
+      tandis que "Non" est décoché.
+      Les deux RadioButton ont du texte en couleur noire avec une taille de 20sp. -->
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <RadioButton android:id="@+id/rbtOui"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Oui"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+        <RadioButton android:id="@+id/rbtNon"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="non"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+    </RadioGroup>
+
+    <!-- Cet EditText est destiné à la saisie de la valeur mesurée en mmol/l.
+     Il s'étend sur toute la largeur disponible,
+     ajuste automatiquement sa hauteur en fonction du contenu,
+     a une marge supérieure de 20dp pour le positionner sous un autre élément,
+     et a une taille de texte de 25sp.
+     Il accepte uniquement les valeurs décimales. -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:hint="Valeur mesurée (en mmol/l)"
+        android:inputType="numberDecimal"
+        />
+
+    <!-- Ce Button est utilisé pour déclencher une action de consultation.
+         Il a une marge supérieure de 50dp pour le positionner sous un autre élément.
+         Il a un ID unique "btnConsulter" pour référencer le bouton dans le code.
+         Il s'étend sur toute la largeur disponible,
+         ajuste automatiquement sa hauteur en fonction du contenu,
+         est centré horizontalement,
+         utilise un arrière-plan défini par la ressource "button_shape",
+         affiche le texte "CONSULTER",
+          déclenche la méthode "calculer" lorsqu'il est cliqué,
+          et a une taille de texte de 18sp. -->
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/btnConsulter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button_shape"
+        android:text="CONSULTER"
+        android:onClick="calculer"
+        android:textSize="18sp"
+        />
+
+    <!-- Ce TextView est utilisé pour afficher un texte centré.
+     Il a une marge supérieure de 18dp pour le positionner sous un autre élément.
+     Il s'étend sur toute la largeur disponible,
+     ajuste automatiquement sa hauteur en fonction du contenu,
+     a du texte "..." (remplacez par le texte souhaité),
+     est centré horizontalement, et a une taille de texte de 30dp. -->
+    <TextView
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:gravity="center"
+        android:textSize="30dp"
+        />
+
+
+
+</LinearLayout>

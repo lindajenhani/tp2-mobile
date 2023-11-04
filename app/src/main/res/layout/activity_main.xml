@@ -32,7 +32,7 @@
      Il affiche le texte "votre age" provenant de la ressource "title" avec une taille de texte
      de 25sp, une marge supérieure de 20dp et une couleur de texte noire. -->
     <TextView
-        android:id="@+id/AvAge"
+        android:id="@+id/tvAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
@@ -124,6 +124,7 @@
      et a une taille de texte de 25sp.
      Il accepte uniquement les valeurs décimales. -->
     <EditText
+        android:id="@+id/vm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -161,6 +162,7 @@
      a du texte "..." (remplacez par le texte souhaité),
      est centré horizontalement, et a une taille de texte de 30dp. -->
     <TextView
+        android:id="@+id/tvResult"
         android:layout_marginTop="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
